@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc-watch --onSuccess \"node build/index.js\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Ajou-Travely/BE-WebSocket/issues"
   },
-  "homepage": "https://github.com/Ajou-Travely/BE-WebSocket#readme"
+  "homepage": "https://github.com/Ajou-Travely/BE-WebSocket#readme",
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "tsc-watch": "^5.0.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.3"
+  }
 }
