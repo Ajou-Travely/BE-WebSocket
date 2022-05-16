@@ -1,4 +1,6 @@
 export const TYPE = {
+  CONNECT: "connect",
+  DISCONNECT: "disconnect",
   CREATE_ROOM: "CREATE_ROOM",
   JOIN_ROOM: "JOIN_ROOM",
   LEAVE_ROOM: "LEAVE_ROOM",
