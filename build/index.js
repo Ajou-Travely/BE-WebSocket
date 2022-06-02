@@ -1,17 +1,16 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-class App {
-    constructor() {
-        this.application = (0, express_1.default)();
-    }
-}
-const app = new App().application;
-app.get("/", (req, res) => {
-    res.send("start!!!");
+const http_1 = require("http");
+const socket_io_1 = require("socket.io");
+const index_1 = require("@socket/index");
+const httpServer = (0, http_1.createServer)();
+const io = new socket_io_1.Server(httpServer, {
+    cors: {
+        origin: "*",
+    },
 });
-app.listen(4000, () => console.log("start"));
+(0, index_1.getSocket)(io);
+httpServer.listen(4000, () => {
+    console.log("Server On");
+});
 //# sourceMappingURL=index.js.map
